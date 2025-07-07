@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amigo Psicólogo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="chatbot.css">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="chatbot.css" />
 </head>
 <body>
-  <div class="stars"></div>
-
-  <!-- 🔙 Botón de Regreso -->
-  <button class="back-btn"><a href="./index.html">← Regresar</a></button>
-
-  <div class="mystic-container">
-    <div class="title">Amigo Psicólogo</div>
-    <div class="chat-area" id="chat-box">
-      <div class="message bot">
-        <div class="bubble bot-bubble">
-          <span>Hola, soy tu amigo psicólogo. ¡Cuéntame cómo te sientes hoy!</span>
-        </div>
-      </div>
+  <div class="chat-container">
+    <div id="chat-box"></div>
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+      <button onclick="sendMessage()">Enviar</button>
     </div>
-    <form id="chat-form" class="input-area">
-      <input type="text" id="user-input" class="mystic-input" placeholder="Escribe aquí..." autocomplete="off" />
-      <button type="submit" class="send-btn">Enviar</button>
-    </form>
   </div>
-
   <script src="chatbot.js"></script>
 </body>
 </html>

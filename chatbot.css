@@ -1,193 +1,73 @@
-:root {
-  --deep-purple: #1a0035;
-  --mystic-gradient: linear-gradient(135deg, #2a0845, #6a0572);
-  --gold: #f4d03f;
-  --white: #ffffff;
-}
-
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
-  font-family: 'Outfit', sans-serif;
-  background: radial-gradient(circle at center, #100030 10%, #1a0035 90%);
-  color: var(--white);
-  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  position: relative;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.stars {
-  position: absolute;
+.chat-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
-  height: 100%;
-  background: transparent;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: blink 2s infinite ease-in-out;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.5); }
-}
-
-.mystic-container {
-  background: var(--mystic-gradient);
-  border-radius: 50px;
-  box-shadow: 0 0 40px rgba(244, 208, 63, 0.3);
-  padding: 2rem;
-  width: 90%;
-  max-width: 450px;
-  height: 90vh;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  z-index: 2;
-  position: relative;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-.title {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--gold);
-  text-shadow: 0 0 12px var(--gold);
-}
-
-.back-btn a{
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #a66bff;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-  z-index: 1000;
-  text-decoration: none;
-}
-
-.back-btn:hover {
-  background-color: #8f50e9;
-}
-
-
-.chat-area {
-  flex: 1;
-  margin: 1.5rem 0;
+#chat-box {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
   overflow-y: auto;
-  background: rgba(255,255,255,0.05);
-  padding: 1rem;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) transparent;
-}
-
-.chat-area::-webkit-scrollbar {
-  width: 6px;
-}
-.chat-area::-webkit-scrollbar-thumb {
-  background-color: var(--gold);
-  border-radius: 4px;
-}
-.chat-area::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.message {
-  margin-bottom: 1rem;
-  display: flex;
-}
-
-.bubble {
-  padding: 0.8rem 1.2rem;
-  border-radius: 16px;
-  font-size: 1rem;
-  line-height: 1.4;
-  max-width: 80%;
-}
-
-.bot .bot-bubble {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fdf6c6;
-  border: 1px solid rgba(244, 208, 63, 0.3);
-}
-
-.user {
-  justify-content: flex-end;
-}
-
-.user-bubble {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 1px solid rgba(244, 208, 63, 0.3);
+  height: 300px;
+  background-color: #f9f9f9;
 }
 
 .input-area {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
-.mystic-input {
-  flex: 1;
-  border: none;
-  border-radius: 30px;
-  padding: 0.8rem 1.2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+#user-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #4caf50;
   color: white;
-  font-size: 1rem;
-}
-
-.mystic-input::placeholder {
-  color: #ccc;
-}
-
-.mystic-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px var(--gold);
-}
-
-.send-btn {
   border: none;
-  border-radius: 30px;
-  padding: 0.8rem 1.2rem;
-  background: var(--gold);
-  color: var(--deep-purple);
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.send-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--gold);
-}
-
-.typing .dot {
-  animation: blink 1.4s infinite;
   font-weight: bold;
-  font-size: 1.1em;
-  margin-left: 2px;
 }
-.typing .dot:nth-child(2) { animation-delay: 0.2s; }
-.typing .dot:nth-child(3) { animation-delay: 0.4s; }
 
-.italic span {
-  font-style: italic;
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .chat-container {
+    border-radius: 0;
+    height: 100vh;
+    max-width: 100%;
+  }
+
+  #chat-box {
+    height: 60vh;
+  }
 }
