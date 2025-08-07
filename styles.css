@@ -565,6 +565,28 @@ footer {
     animation: pulse-social 1.5s infinite;
 }
 
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.7rem 1.4rem;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--accent-red);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-download:hover {
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--accent-red);
+}
+
 
 
 @keyframes pulse-social {
