@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Web</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Portafolio<span>Web</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text animate-on-scroll">
+                <h1>Hola, soy <span>Brandon</span></h1>
+                <h1>Aprendiz de programación</h1>
+                <p>Creo soluciones digitales innovadoras con código limpio y eficiente. Aprendiendo desarrollo web trabajando diferentes tecnologías.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image animate-on-scroll">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/de428fba-ed56-4339-964a-df69fc246192.png" alt="Desarrollador trabajando en una laptop con código en pantalla en un entorno oscuro con iluminación roja" />
+            </div>
+        </div>
+    </section>
+<!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title animate-on-scroll">
+            <h2>Sobre mí</h2>
+            <p>Desarrollador web enfocado en crear experiencias impactantes con código limpio y funcional</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image animate-on-scroll">
+                <img src="./assets/Imagen_principal.jpeg" alt="Desarrollador con fondo oscuro y luces rojas" />
+            </div>
+            <div class="about-text animate-on-scroll">
+                <h3>Hola, soy Brandon Acevedo</h3>
+                <p>Soy un desarrollador frontend y backend con enfoque en tecnologías web modernas. Mi experiencia se basa en construir interfaces dinámicas, atractivas y funcionales utilizando HTML, CSS, JavaScript y cuando lo amerita Python.</p>
+                <p>Me apasiona la creación de soluciones intuitivas, escalables y bien estructuradas, y disfruto constantemente aprendiendo nuevas herramientas para mantenerme al día en el desarrollo web.</p>
+                <div class="skills">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i>
+                        <p>Python</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-git-alt"></i>
+                        <p>Git & GitHub</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-terminal"></i>
+                        <p>Terminal & CLI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-title animate-on-scroll">
+            <h2>Mis Proyectos</h2>
+            <p>Algunos desarrollos web que he realizado con enfoque en diseño, funcionalidad y buenas prácticas</p>
+        </div>
+        <div class="projects-container">
+
+            <!-- Proyecto 1 -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <img src="./assets/proyectos/Cartas_Misticas.png" alt="Sistema de cartas interactivas con diseño místico y colores oscuros" />
+                </div>
+                <div class="project-info">
+                    <h3>Sistema de Cartas Místicas</h3>
+                    <p>Web app interactiva con cartas animadas y mensajes sobre dinero y conciencia. Diseñada con HTML, CSS y JavaScript puro.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nombre-chatbot-mistico-frontend.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/Brandon-Ac/Nombre-chatbot-mistico-frontend" target="_blank"><i class="fab fa-github"></i> Código</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Proyecto 2 -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <img src="./assets/proyectos/Bank_Acme.png" alt="Dashboard de aplicación bancaria con interfaz oscura y tarjetas de cuenta" />
+                </div>
+                <div class="project-info">
+                    <h3>Bank Acme</h3>
+                    <p>Aplicación simulada de banca digital con dashboard, gestión de cuentas y simulación de transferencias. Frontend funcional con lógica en JavaScript.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://bancoacmeconamigos.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        <a href="https://github.com/Brandon-Ac/banco_acme_con_amigos"><i class="fab fa-github"></i> Código</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+    <div class="section-title animate-on-scroll">
+        <h2>Contacto</h2>
+        <p>¿Quieres trabajar conmigo o necesitas más información? Escríbeme</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info animate-on-scroll">
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+            <h3>Email</h3>
+            <p>brandonacevedo698@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+            <h3>Ubicación</h3>
+            <p>Cúcuta, Colombia</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+            <h3>Teléfono</h3>
+            <p>+57 311 483 2681</p>
+            </div>
+        </div>
+        </div>
+
+        <!-- Formulario que envía email -->
+        <form class="contact-form animate-on-scroll" action="https://formsubmit.co/brandonacevedo698@gmail.com" method="POST">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Asunto</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <!-- Opcional: para evitar spam -->
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links animate-on-scroll">
+            <a href="https://github.com/Brandon-Ac"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/brandon-acevedo-326850374/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/573114832681" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-text animate-on-scroll">.</p>
+    </footer>
+    <script src="./script.js"></script>
+
+</body>
+</html>
