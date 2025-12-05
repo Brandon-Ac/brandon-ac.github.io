@@ -2,11 +2,15 @@
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.querySelector('.nav-links');
 
+// initial aria state
+menuBtn.setAttribute('aria-expanded', 'false');
+
 menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.innerHTML = navLinks.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
+    const expanded = navLinks.classList.toggle('active');
+    menuBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    menuBtn.innerHTML = expanded
+        ? '<i class="fas fa-times" aria-hidden="true"></i>'
+        : '<i class="fas fa-bars" aria-hidden="true"></i>';
 });
 
 // Efecto de partículas
@@ -59,13 +63,21 @@ function animateOnScroll() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        navLinks.classList.remove('active');
-        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+
+        // close mobile menu when a link is clicked
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+        }
+
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            // move keyboard focus to the target for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+        }
     });
 });
 
@@ -76,3 +88,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', animateOnScroll)
+
+// Contact form: AJAX submit with fallback and accessible messages
+const contactForm = document.querySelector('.contact-form');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!formMessage) return contactForm.submit();
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Enviando...';
+
+        const action = contactForm.getAttribute('action');
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(action, {
+                method: 'POST',
+                body: formData,
+                mode: 'cors'
+            });
+
+            if (response.ok) {
+                formMessage.hidden = false;
+                formMessage.textContent = 'Gracias — Tu mensaje fue enviado. Responderé en 1-2 días hábiles.';
+                contactForm.reset();
+                formMessage.focus();
+            } else {
+                throw new Error('Error en el envío');
+            }
+        } catch (err) {
+            // fallback: try native submit (may navigate away)
+            formMessage.hidden = false;
+            formMessage.textContent = 'No se pudo enviar mediante AJAX. Intentando envío tradicional...';
+            setTimeout(() => {
+                contactForm.submit();
+            }, 800);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
+    });
+}
